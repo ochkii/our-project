@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit Todo</h1>
+        <form th:action="@{/edit}" th:object="${todoEdit}" method="post">
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Input Id</td>
+                    <td><input type="text" th:field="${todoEdit.id}"></td>
+                </tr>
+                <tr>
+                    <td>Input Username</td>
+                    <td><input type="text" th:field="${todoEdit.username}" ></td>
+                </tr>
+                       <td>Edit Content</td>
+                       <td><input type="text" th:field="${todoEdit.content}" ></td>
+                   </tr>
+
+                <tr>
+                       <td>Input Detail</td>
+                       <td><input type="text" th:field="${todoEdit.detail}" ></td>
+                </tr>
+                <tr>
+                       <td colspan="2"><button type="submit">Save</button></td>
+                   </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
